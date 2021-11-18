@@ -7,9 +7,10 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
     
-    var rank: Int = 10 { didSet{ setNeedsDisplay(); setNeedsLayout() } }
+    var rank: Int = 12 { didSet{ setNeedsDisplay(); setNeedsLayout() } }
     var suite: String = "♦️" { didSet{ setNeedsDisplay(); setNeedsLayout() } }
     var isFaceUp: Bool = true { didSet{ setNeedsDisplay(); setNeedsLayout() } }
     
@@ -138,11 +139,19 @@ class PlayingCardView: UIView {
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
-        
-        if let faceCardImage = UIImage(named: rankString){
-            faceCardImage.draw(in: bounds.zoomed(by: SizeRatio.faceCardImageSizeToBoundsSize))
+        if isFaceUp{
+            //if let faceCardImage = UIImage(named: rankString){
+            
+            //If you want to see images within the interface builder (after having set @IBDesignable on the class view), use this:
+            if let faceCardImage = UIImage(named: rankString, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection){
+                faceCardImage.draw(in: bounds.zoomed(by: SizeRatio.faceCardImageSizeToBoundsSize))
+            }else{
+                drawPips()
+            }
         }else{
-            drawPips()
+            if let cardBackImage = UIImage(named: "cardback", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection){
+                cardBackImage.draw(in: bounds)
+            }
         }
     }
 

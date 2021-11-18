@@ -16,6 +16,16 @@ class PlayingCardView: UIView {
     var suite: String = "♦️" { didSet{ setNeedsDisplay(); setNeedsLayout() } }
     @IBInspectable
     var isFaceUp: Bool = true { didSet{ setNeedsDisplay(); setNeedsLayout() } }
+    var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize{ didSet{ setNeedsDisplay() } }
+    
+    @objc func adjustFaceCardScale(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer){
+        switch recognizer.state{
+        case .changed, .ended:
+            faceCardScale *= recognizer.scale
+            recognizer.scale = 1.0 // Reset the recognizer scale otherwise it will scale in an exponential way
+        default: break
+        }
+    }
     
     private func centeredAtributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString{
         var font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).withSize(fontSize)
@@ -147,7 +157,7 @@ class PlayingCardView: UIView {
             
             //If you want to see images within the interface builder (after having set @IBDesignable on the class view), use this:
             if let faceCardImage = UIImage(named: rankString, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection){
-                faceCardImage.draw(in: bounds.zoomed(by: SizeRatio.faceCardImageSizeToBoundsSize))
+                faceCardImage.draw(in: bounds.zoomed(by: faceCardScale))
             }else{
                 drawPips()
             }

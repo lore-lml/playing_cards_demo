@@ -10,8 +10,11 @@ import UIKit
 @IBDesignable
 class PlayingCardView: UIView {
     
+    @IBInspectable
     var rank: Int = 12 { didSet{ setNeedsDisplay(); setNeedsLayout() } }
+    @IBInspectable
     var suite: String = "♦️" { didSet{ setNeedsDisplay(); setNeedsLayout() } }
+    @IBInspectable
     var isFaceUp: Bool = true { didSet{ setNeedsDisplay(); setNeedsLayout() } }
     
     private func centeredAtributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString{

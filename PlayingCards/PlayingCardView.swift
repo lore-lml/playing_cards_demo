@@ -18,14 +18,14 @@ class PlayingCardView: UIView {
     var isFaceUp: Bool = true { didSet{ setNeedsDisplay(); setNeedsLayout() } }
     var faceCardScale: CGFloat = SizeRatio.faceCardImageSizeToBoundsSize{ didSet{ setNeedsDisplay() } }
     
-    @objc func adjustFaceCardScale(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer){
-        switch recognizer.state{
-        case .changed, .ended:
-            faceCardScale *= recognizer.scale
-            recognizer.scale = 1.0 // Reset the recognizer scale otherwise it will scale in an exponential way
-        default: break
-        }
-    }
+//    @objc func adjustFaceCardScale(byHandlingGestureRecognizedBy recognizer: UIPinchGestureRecognizer){
+//        switch recognizer.state{
+//        case .changed, .ended:
+//            faceCardScale *= recognizer.scale
+//            recognizer.scale = 1.0 // Reset the recognizer scale otherwise it will scale in an exponential way
+//        default: break
+//        }
+//    }
     
     private func centeredAtributedString(_ string: String, fontSize: CGFloat) -> NSAttributedString{
         var font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body).withSize(fontSize)

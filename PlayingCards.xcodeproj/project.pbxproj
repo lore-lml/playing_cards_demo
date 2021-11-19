@@ -16,6 +16,7 @@
 		013D516A274550B100DE77E5 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D5169274550B100DE77E5 /* PlayingCard.swift */; };
 		013D516C2745554B00DE77E5 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D516B2745554B00DE77E5 /* PlayingCardDeck.swift */; };
 		013D516E2745651800DE77E5 /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D516D2745651800DE77E5 /* PlayingCardView.swift */; };
+		01835CAC2747B8A400A45815 /* CardBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835CAB2747B8A400A45815 /* CardBehaviour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		013D5169274550B100DE77E5 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		013D516B2745554B00DE77E5 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 		013D516D2745651800DE77E5 /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
+		01835CAB2747B8A400A45815 /* CardBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehaviour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				013D51682745505200DE77E5 /* Supporting Files */,
 				013D515827454FCA00DE77E5 /* ViewController.swift */,
+				01835CAB2747B8A400A45815 /* CardBehaviour.swift */,
 				013D516D2745651800DE77E5 /* PlayingCardView.swift */,
 				013D515A27454FCA00DE77E5 /* Main.storyboard */,
 				013D5169274550B100DE77E5 /* PlayingCard.swift */,
@@ -161,6 +164,7 @@
 				013D516C2745554B00DE77E5 /* PlayingCardDeck.swift in Sources */,
 				013D516A274550B100DE77E5 /* PlayingCard.swift in Sources */,
 				013D515727454FCA00DE77E5 /* SceneDelegate.swift in Sources */,
+				01835CAC2747B8A400A45815 /* CardBehaviour.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

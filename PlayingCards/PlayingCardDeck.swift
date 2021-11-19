@@ -34,3 +34,22 @@ extension Int{
         return 0
     }
 }
+
+extension Double{
+    var random: Double{
+        if self < 0.001{
+            return 0
+        }
+        
+        var range = [Double]()
+        for v in stride(from: 0, to: abs(self), by: 0.1){
+            range.append(v)
+        }
+        
+        if self >= 0.0 {
+            return range[range.count.random_uniform]
+        }else{
+            return -range[range.count.random_uniform]
+        }
+    }
+}
